@@ -7,6 +7,6 @@ vendor/
 .env.local.php
 Dockerfile
 docker-compose.yml
-docker-compose-test.yml
+docker-compose-test-ci.yml
 docker-compose-prod.yml
 Makefile

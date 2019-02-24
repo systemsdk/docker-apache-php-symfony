@@ -6,7 +6,7 @@ start:
 	@docker-compose -f docker-compose.yml $(project) up -d
 
 start-test:
-	@docker-compose -f docker-compose-test.yml $(project) up -d
+	@docker-compose -f docker-compose-test-ci.yml $(project) up -d
 
 start-prod:
 	@docker-compose -f docker-compose-prod.yml $(project) up -d
@@ -15,7 +15,7 @@ stop:
 	@docker-compose -f docker-compose.yml $(project) down
 
 stop-test:
-	@docker-compose -f docker-compose-test.yml $(project) down
+	@docker-compose -f docker-compose-test-ci.yml $(project) down
 
 stop-prod:
 	@docker-compose -f docker-compose-prod.yml $(project) down
