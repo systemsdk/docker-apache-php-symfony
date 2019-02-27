@@ -299,7 +299,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "4.2",
-            "ref": "5bb3a8c27df824d195fa68bb635d074854f8498f"
+            "ref": "9aafbc8edf7558dfe213e9d51d0217cbd78acc5a"
         },
         "files": [
             "config/bootstrap.php",
@@ -357,7 +357,7 @@
         "version": "v1.0.6"
     },
     "symfony/panther": {
-        "version": "v0.2.0"
+        "version": "v0.3.0"
     },
     "symfony/phpunit-bridge": {
         "version": "4.1",

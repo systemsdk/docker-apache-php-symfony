@@ -7,7 +7,7 @@ services:
       build:
         context: .
         args:
-          - "BUILD_ARGUMENT_APP_ENV=dev"
+          - "BUILD_ARGUMENT_ENV=dev"
           - "BUILD_ARGUMENT_DEBUG_ENABLED=false"
         dockerfile: ./Dockerfile
       container_name: symfony
@@ -29,7 +29,7 @@ services:
       build:
         context: .
         args:
-          - "BUILD_ARGUMENT_APP_ENV=dev"
+          - "BUILD_ARGUMENT_ENV=dev"
           - "BUILD_ARGUMENT_DEBUG_ENABLED=false"
         dockerfile: ./Dockerfile
       container_name: supervisord

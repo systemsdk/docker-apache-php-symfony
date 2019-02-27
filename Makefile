@@ -59,7 +59,7 @@ info:
 	@make exec cmd="php --version"
 
 drop-migrate:
-	@make exec cmd="php bin/console doctrine:schema:drop --full-database --force --env=dev"
+	@make exec cmd="php bin/console doctrine:schema:drop --full-database --force"
 	@make exec cmd="php bin/console doctrine:schema:drop --full-database --force --env=test"
 	@make migrate
 
@@ -67,14 +67,11 @@ migrate-prod:
 	@make exec cmd="php bin/console doctrine:migrations:migrate --no-interaction"
 
 migrate:
-	@make exec cmd="php bin/console doctrine:migrations:migrate --no-interaction --env=dev"
+	@make exec cmd="php bin/console doctrine:migrations:migrate --no-interaction"
 	@make exec cmd="php bin/console doctrine:migrations:migrate --no-interaction --env=test"
 
-fixtures-prod:
-	@make exec cmd="php bin/console doctrine:fixtures:load --append"
-
 fixtures:
-	@make exec cmd="php bin/console doctrine:fixtures:load --append --env=dev"
+	@make exec cmd="php bin/console doctrine:fixtures:load --append"
 
 phpunit:
 	@make exec cmd="./vendor/bin/simple-phpunit -c phpunit.xml.dist --log-junit reports/phpunit.xml --coverage-html reports/coverage --coverage-clover reports/coverage.xml"
