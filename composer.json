@@ -31,6 +31,7 @@
     },
     "require-dev": {
         "codedungeon/phpunit-result-printer": "^0.26.0",
+        "sensiolabs/security-checker": "^5.0",
         "symfony/browser-kit": "4.2.*",
         "symfony/css-selector": "4.2.*",
         "symfony/debug-pack": "*",
@@ -67,7 +68,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "security-checker security:check": "script"
         },
         "post-install-cmd": [
             "@auto-scripts"
