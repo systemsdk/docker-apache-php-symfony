@@ -19,8 +19,10 @@ services:
         - "443:443"
       depends_on:
         - mysql
+        - rabbitmq
       links:
         - mysql
+        - rabbitmq
 
     supervisord:
       image: symfony:latest
@@ -34,8 +36,10 @@ services:
       user: root
       depends_on:
         - mysql
+        - rabbitmq
       links:
         - mysql
+        - rabbitmq
       command: ["/usr/bin/supervisord"]
 
     mysql:
@@ -50,3 +54,14 @@ services:
       volumes:
         - ./var/mysql-data:/var/lib/mysql
         - ./docker/dev/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
+    rabbitmq:
+      image: rabbitmq:3-management-alpine
+      container_name: rabbitmq
+      environment:
+        - RABBITMQ_DEFAULT_USER=guest
+        - RABBITMQ_DEFAULT_PASS=guest
+      ports:
+        - "15672:15672"
+      volumes:
+        - ./var/rabbitmq:/var/lib/rabbitmq
