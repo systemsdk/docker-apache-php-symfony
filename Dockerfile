@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.4-apache
 
 # set main params
 ARG BUILD_ARGUMENT_DEBUG_ENABLED=false
@@ -55,8 +55,8 @@ RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN chown -R www-data:www-data $APP_HOME
 
 # put apache and php config for Symfony, enable sites
-COPY ./docker/hosts/symfony.conf /etc/apache2/sites-available/symfony.conf
-COPY ./docker/hosts/symfony-ssl.conf /etc/apache2/sites-available/symfony-ssl.conf
+COPY ./docker/general/symfony.conf /etc/apache2/sites-available/symfony.conf
+COPY ./docker/general/symfony-ssl.conf /etc/apache2/sites-available/symfony-ssl.conf
 RUN a2ensite symfony.conf && a2ensite symfony-ssl
 COPY ./docker/$BUILD_ARGUMENT_ENV/php.ini /usr/local/etc/php/php.ini
 
@@ -65,7 +65,7 @@ RUN a2enmod rewrite
 RUN a2enmod ssl
 
 # install Xdebug in case development or test environment
-COPY ./docker/other/do_we_need_xdebug.sh /tmp/
+COPY ./docker/general/do_we_need_xdebug.sh /tmp/
 COPY ./docker/dev/xdebug.ini /tmp/
 RUN chmod u+x /tmp/do_we_need_xdebug.sh && /tmp/do_we_need_xdebug.sh
 
@@ -74,8 +74,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ 
 
 # add supervisor
 RUN mkdir -p /var/log/supervisor
-COPY --chown=root:root ./docker/other/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY --chown=root:root ./docker/other/cron /var/spool/cron/crontabs/root
+COPY --chown=root:root ./docker/general/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY --chown=root:root ./docker/general/cron /var/spool/cron/crontabs/root
 RUN chmod 0600 /var/spool/cron/crontabs/root
 
 # generate certificates
