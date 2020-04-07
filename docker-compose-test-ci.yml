@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-    symfony:
+    symfony: &symfony-template
       image: symfony:latest
       build:
         context: .
@@ -12,11 +12,11 @@ services:
         dockerfile: ./Dockerfile
       container_name: symfony
       expose:
-        - "80"
-        - "443"
+        - 80
+        - 443
       ports:
-        - "80:80"
-        - "443:443"
+        - 80:80
+        - 443:443
       depends_on:
         - mysql
         - rabbitmq
@@ -24,22 +24,13 @@ services:
         - mysql
         - rabbitmq
 
+    ### Cron tasks, RabbitMQ consumers
     supervisord:
-      image: symfony:latest
-      build:
-        context: .
-        args:
-          - "BUILD_ARGUMENT_ENV=test"
-          - "BUILD_ARGUMENT_DEBUG_ENABLED=false"
-        dockerfile: ./Dockerfile
+      <<: *symfony-template
       container_name: supervisord
       user: root
-      depends_on:
-        - mysql
-        - rabbitmq
-      links:
-        - mysql
-        - rabbitmq
+      expose: []
+      ports: []
       command: ["/usr/bin/supervisord"]
 
     mysql:
@@ -50,18 +41,23 @@ services:
         - MYSQL_ROOT_PASSWORD=secret
         - MYSQL_DATABASE=symfony
       ports:
-        - "33061:3306"
+        - 33061:3306
       volumes:
         - ./var/mysql-data:/var/lib/mysql
         - ./docker/dev/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
 
     rabbitmq:
       image: rabbitmq:3-management-alpine
+      build:
+        context: ./docker/rabbitmq/
+        dockerfile: ./Dockerfile
       container_name: rabbitmq
       environment:
+        - RABBITMQ_ERLANG_COOKIE=7ead507151fc4461b9f45c1161384a04
         - RABBITMQ_DEFAULT_USER=guest
         - RABBITMQ_DEFAULT_PASS=guest
+        - RABBITMQ_DEFAULT_VHOST=/
       ports:
-        - "15672:15672"
+        - 15672:15672
       volumes:
         - ./var/rabbitmq:/var/lib/rabbitmq
