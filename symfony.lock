@@ -1,4 +1,7 @@
 {
+    "bamarni/composer-bin-plugin": {
+        "version": "1.4.1"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -89,6 +92,9 @@
     },
     "doctrine/reflection": {
         "version": "v1.1.0"
+    },
+    "doctrine/sql-formatter": {
+        "version": "1.1.0"
     },
     "easycorp/easy-log-handler": {
         "version": "v1.0.9"
@@ -405,11 +411,17 @@
     "symfony/polyfill-intl-idn": {
         "version": "v1.13.1"
     },
+    "symfony/polyfill-intl-normalizer": {
+        "version": "v1.18.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.13.1"
     },
     "symfony/polyfill-php73": {
         "version": "v1.13.1"
+    },
+    "symfony/polyfill-php80": {
+        "version": "v1.18.0"
     },
     "symfony/process": {
         "version": "v4.4.3"

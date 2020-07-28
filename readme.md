@@ -33,7 +33,7 @@ Note: Delete var/mysql-data folder if it is exist.
 
 4.Build, start and install the docker images from your terminal:
 ```bash
-docker-compose -f docker-compose-prod.yml build
+make build-prod
 make start-prod
 ```
 
@@ -50,7 +50,7 @@ Note: Delete var/mysql-data folder if it is exist.
 
 2.Build, start and install the docker images from your terminal:
 ```bash
-docker-compose -f docker-compose-staging.yml build
+make build-staging
 make start-staging
 ```
 
@@ -91,7 +91,7 @@ xdebug.remote_autostart = 1
 
 5.Build, start and install the docker images from your terminal:
 ```bash
-docker-compose build
+make build
 make start
 make composer-install
 ```
@@ -117,12 +117,12 @@ Note 2: Please use `exit` command in order to return from container's shell to l
 In case you edited Dockerfile or other environment configuration you'll need to build containers again using next commands:
 ```bash
 make stop
-docker-compose build
+make build
 make start
 ```
-Note 1: Please use next command if you need to build staging environment `docker-compose -f docker-compose-staging.yml build` instead `docker-compose build`.
+Note 1: Please use next command if you need to build staging environment `make build-staging` instead `make build`.
 
-Note 2: Please use next command if you need to build prod environment `docker-compose -f docker-compose-prod.yml build` instead `docker-compose build`.
+Note 2: Please use next command if you need to build prod environment `make build-prod` instead `make build`.
 
 ## Start and stop environment
 Please use next make commands in order to start and stop environment:
@@ -136,6 +136,11 @@ Note 2: For prod environment need to be used next make commands: `make start-pro
 
 ## Additional main command available
 ```bash
+make build
+make build-test
+make build-staging
+make build-prod
+
 make start
 make start-test
 make start-staging
