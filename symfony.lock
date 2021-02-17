@@ -114,6 +114,9 @@
     "ergebnis/json-printer": {
         "version": "3.0.2"
     },
+    "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.3"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -577,6 +580,9 @@
     },
     "symfony/yaml": {
         "version": "v4.4.3"
+    },
+    "systemsdk/easy-log-bundle": {
+        "version": "v1.10.0"
     },
     "twig/twig": {
         "version": "v3.0.1"

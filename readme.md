@@ -209,7 +209,7 @@ Notes: Please see more commands in Makefile
 * [phpunit-bridge](https://github.com/symfony/phpunit-bridge)
 * [browser-kit](https://github.com/symfony/browser-kit)
 * [css-selector](https://github.com/symfony/css-selector)
-* [security-checker](https://github.com/sensiolabs/security-checker)
+* [security-checker](https://github.com/fabpot/local-php-security-checker)
 * [messenger](https://symfony.com/doc/current/messenger.html)
 * [serializer-pack](https://packagist.org/packages/symfony/serializer-pack)
 * [composer-bin-plugin](https://github.com/bamarni/composer-bin-plugin)
