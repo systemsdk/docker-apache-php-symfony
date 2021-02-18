@@ -17,6 +17,8 @@ services:
       ports:
         - 80:80
         - 443:443
+      volumes:
+        - ./.git:/var/www/html/.git
       depends_on:
         - mysql
         - rabbitmq
