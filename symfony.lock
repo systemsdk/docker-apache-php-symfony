@@ -414,6 +414,9 @@
     "symfony/orm-pack": {
         "version": "v1.0.7"
     },
+    "symfony/polyfill-ctype": {
+        "version": "v1.22.1"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.13.1"
     },
@@ -425,6 +428,9 @@
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.13.1"
+    },
+    "symfony/polyfill-php72": {
+        "version": "v1.22.1"
     },
     "symfony/polyfill-php73": {
         "version": "v1.13.1"
