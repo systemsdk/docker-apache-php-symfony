@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.0-apache
 
 # set main params
 ARG BUILD_ARGUMENT_DEBUG_ENABLED=false
@@ -36,7 +36,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       libzip-dev \
       wget \
       librabbitmq-dev \
-    && pecl install amqp \
+    && pecl install amqp-1.11.0beta \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-configure intl \
     && docker-php-ext-install \
