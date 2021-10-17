@@ -35,6 +35,7 @@
 		"doctrine/doctrine-bundle": "^2.4",
 		"doctrine/doctrine-migrations-bundle": "^3.1",
 		"doctrine/orm": "^2.10",
+		"doctrine/dbal": "2.*",
 		"dukecity/command-scheduler-bundle": "^4.0",
 		"sensio/framework-extra-bundle": "^6.2",
 		"symfony/apache-pack": "^1.0",
