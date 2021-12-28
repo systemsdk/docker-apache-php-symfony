@@ -1,5 +1,5 @@
 {
-	"name": "dimadeush/docker-apache-php-symfony-tools",
+	"name": "systemsdk/docker-apache-php-symfony-tools",
 	"description": "",
 	"require": {},
 	"require-dev": {
