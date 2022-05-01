@@ -21,7 +21,7 @@ Note: OS recommendation - Linux Ubuntu based.
 1. Apache 2.4
 2. PHP 8.0 (Apache handler)
 3. MySQL 8
-4. Symfony 5
+4. Symfony 6
 5. RabbitMQ 3
 
 ## Setting up DEV environment
@@ -217,7 +217,7 @@ etc....
 Notes: Please see more commands in Makefile
 
 ## Architecture & packages
-* [Symfony 5](https://symfony.com)
+* [Symfony 6](https://symfony.com)
 * [apache-pack](https://github.com/symfony/recipes-contrib/tree/master/symfony/apache-pack)
 * [doctrine-migrations-bundle](https://github.com/doctrine/DoctrineMigrationsBundle)
 * [doctrine-fixtures-bundle](https://github.com/doctrine/DoctrineFixturesBundle)
