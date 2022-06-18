@@ -7,18 +7,19 @@ services:
       build:
         context: .
         args:
-          - "BUILD_ARGUMENT_ENV=test"
-          - "BUILD_ARGUMENT_DEBUG_ENABLED=false"
+          BUILD_ARGUMENT_ENV: test
+          HOST_UID: ${HOST_UID}
+          HOST_GID: ${HOST_GID}
         dockerfile: ./Dockerfile
       container_name: ${COMPOSE_PROJECT_NAME}_symfony
       expose:
         - 80
         - 443
       ports:
-        - 80:80
-        - 443:443
+        - "80:80"
+        - "443:443"
       volumes:
-        - ./.git:/var/www/html/.git
+        - ./.git:/var/www/html/.git:cached
       depends_on:
         - mysql
         - rabbitmq
@@ -38,12 +39,12 @@ services:
       container_name: ${COMPOSE_PROJECT_NAME}_mysql
       command: --default-authentication-plugin=mysql_native_password
       environment:
-        - MYSQL_ROOT_PASSWORD=secret
-        - MYSQL_DATABASE=symfony
+        MYSQL_ROOT_PASSWORD: secret
+        MYSQL_DATABASE: symfony
       ports:
-        - 33061:3306
+        - "33061:3306"
       volumes:
-        - ./var/mysql-data:/var/lib/mysql
+        - ./var/mysql-data:/var/lib/mysql:delegated
         - ./docker/dev/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
       networks:
         - symfony
@@ -55,14 +56,14 @@ services:
         dockerfile: ./Dockerfile
       container_name: ${COMPOSE_PROJECT_NAME}_rabbitmq
       environment:
-        - RABBITMQ_ERLANG_COOKIE=7ead507151fc4461b9f45c1161384a04
-        - RABBITMQ_DEFAULT_USER=guest
-        - RABBITMQ_DEFAULT_PASS=guest
-        - RABBITMQ_DEFAULT_VHOST=/
+        RABBITMQ_ERLANG_COOKIE: 7ead507151fc4461b9f45c1161384a04
+        RABBITMQ_DEFAULT_USER: guest
+        RABBITMQ_DEFAULT_PASS: guest
+        RABBITMQ_DEFAULT_VHOST: /
       ports:
-        - 15672:15672
+        - "15672:15672"
       volumes:
-        - ./var/rabbitmq:/var/lib/rabbitmq
+        - ./var/rabbitmq:/var/lib/rabbitmq:delegated
       networks:
         - symfony
 

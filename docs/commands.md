@@ -30,6 +30,7 @@ make env-staging                # Create cached config file .env.local.php (usua
 make env-prod                   # Create cached config file .env.local.php (usually for prod environment)
 
 make ssh                        # Enter symfony container shell
+make ssh-root                   # Enter symfony container shell under the root user
 make ssh-supervisord            # Enter supervisord container shell (cron jobs running there, etc...)
 make ssh-mysql                  # Enter mysql container shell
 make ssh-rabbitmq               # Enter rabbitmq container shell
