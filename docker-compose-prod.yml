@@ -3,7 +3,7 @@ version: '3.5'
 services:
 
     symfony: &symfony-template
-      image: ${COMPOSE_PROJECT_NAME}_symfony:latest
+      image: ${COMPOSE_PROJECT_NAME}-symfony:latest
       build:
         context: .
         args:
@@ -11,14 +11,11 @@ services:
           HOST_UID: ${HOST_UID}
           HOST_GID: ${HOST_GID}
         dockerfile: ./Dockerfile
-      container_name: ${COMPOSE_PROJECT_NAME}_symfony
+      container_name: ${COMPOSE_PROJECT_NAME}-symfony
       restart: always
-      expose:
-        - 80
-        - 443
       ports:
-        - "80:80"
-        - "443:443"
+        - "${WEB_PORT_HTTP}:80"
+        - "${WEB_PORT_SSL}:443"
       depends_on:
         - mysql
         - rabbitmq
@@ -28,16 +25,17 @@ services:
     ### Cron tasks, RabbitMQ consumers
     supervisord:
       <<: *symfony-template
-      container_name: ${COMPOSE_PROJECT_NAME}_supervisord
+      container_name: ${COMPOSE_PROJECT_NAME}-supervisord
       expose: []
       ports: []
       command: ["/usr/bin/supervisord"]
 
     mysql:
       image: mysql:8.0
-      container_name: ${COMPOSE_PROJECT_NAME}_mysql
+      platform: linux/x86_64
+      container_name: ${COMPOSE_PROJECT_NAME}-mysql
       restart: always
-      command: --default-authentication-plugin=mysql_native_password
+      command: --default-authentication-plugin=mysql_native_password --innodb-use-native-aio=${INNODB_USE_NATIVE_AIO:-1}
       environment:
         MYSQL_ROOT_PASSWORD: secret
         MYSQL_DATABASE: symfony
@@ -47,11 +45,11 @@ services:
         - symfony
 
     rabbitmq:
-      image: ${COMPOSE_PROJECT_NAME}_rabbitmq
+      image: ${COMPOSE_PROJECT_NAME}-rabbitmq
       build:
         context: ./docker/rabbitmq/
         dockerfile: ./Dockerfile
-      container_name: ${COMPOSE_PROJECT_NAME}_rabbitmq
+      container_name: ${COMPOSE_PROJECT_NAME}-rabbitmq
       restart: always
       environment:
         RABBITMQ_ERLANG_COOKIE: 7ead507151fc4461b9f45c1161384a04
