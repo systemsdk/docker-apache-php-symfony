@@ -19,7 +19,7 @@ Note: OS recommendation - Linux Ubuntu based.
 
 ## Components
 1. Apache 2.4
-2. PHP 8.1 (Apache handler)
+2. PHP 8.2 (Apache handler)
 3. MySQL 8
 4. Symfony 6
 5. RabbitMQ 3
