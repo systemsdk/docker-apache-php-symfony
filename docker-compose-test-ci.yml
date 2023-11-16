@@ -18,6 +18,7 @@ services:
         - "${WEB_PORT_SSL}:443"
       volumes:
         - ./.git:/var/www/html/.git:cached
+        - ./reports:/var/www/html/reports:delegated
       depends_on:
         - mysql
         - rabbitmq
