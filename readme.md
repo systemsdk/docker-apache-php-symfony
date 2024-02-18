@@ -19,7 +19,7 @@ Note: OS recommendation - Linux Ubuntu based.
 
 ## Components
 1. Apache 2.4
-2. PHP 8.2 (Apache handler)
+2. PHP 8.3 (Apache handler)
 3. MySQL 8
 4. Symfony 6
 5. RabbitMQ 3
@@ -264,7 +264,7 @@ Notes: Please see more commands in Makefile
 * [php-coveralls](https://github.com/php-coveralls/php-coveralls)
 * [easy-coding-standard](https://github.com/Symplify/EasyCodingStandard)
 * [PhpMetrics](https://github.com/phpmetrics/PhpMetrics)
-* [phpcpd](https://packagist.org/packages/sebastian/phpcpd)
+* [phpcpd](https://github.com/systemsdk/phpcpd)
 * [phpmd](https://packagist.org/packages/phpmd/phpmd)
 * [phpstan](https://packagist.org/packages/phpstan/phpstan)
 * [phpinsights](https://packagist.org/packages/nunomaduro/phpinsights)

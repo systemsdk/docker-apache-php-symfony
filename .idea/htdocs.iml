@@ -312,6 +312,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/clock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/clock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/tools/09_composer/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/tools/09_composer/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/tools/09_composer/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/tools/09_composer/vendor/symfony/validator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/carbonphp/carbon-doctrine-types" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

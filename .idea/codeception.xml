@@ -15,6 +15,9 @@
         <Configuration>
           <option name="path" value="$PROJECT_DIR$/tools/01_phpunit/tests" />
         </Configuration>
+        <Configuration>
+          <option name="path" value="$PROJECT_DIR$/tools/06_phpmd/tests" />
+        </Configuration>
       </list>
     </option>
   </component>

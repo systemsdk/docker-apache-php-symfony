@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/tools/01_phpunit/tests" />
         <option value="$PROJECT_DIR$/tools/05_phpinsights/tests" />
         <option value="$PROJECT_DIR$/tools/09_composer/tests" />
+        <option value="$PROJECT_DIR$/tools/06_phpmd/tests" />
       </list>
     </option>
   </component>
