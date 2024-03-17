@@ -7,8 +7,6 @@ namespace App\Tests\Functional;
 use App\Tests\FunctionalTestCase;
 
 /**
- * Class ExampleTest
- *
  * @package App\Tests\Functional
  */
 class ExampleTest extends FunctionalTestCase
