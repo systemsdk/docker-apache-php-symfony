@@ -1,5 +1,3 @@
-version: '3.5'
-
 services:
 
     symfony: &symfony-template
@@ -7,15 +5,19 @@ services:
       build:
         context: .
         args:
-          BUILD_ARGUMENT_ENV: prod
+          BUILD_ARGUMENT_ENV: test
           HOST_UID: ${HOST_UID}
           HOST_GID: ${HOST_GID}
+          XDEBUG_CONFIG: ${XDEBUG_CONFIG}
+          XDEBUG_VERSION: ${XDEBUG_VERSION}
         dockerfile: ./Dockerfile
       container_name: ${COMPOSE_PROJECT_NAME}-symfony
-      restart: always
       ports:
         - "${WEB_PORT_HTTP}:80"
         - "${WEB_PORT_SSL}:443"
+      volumes:
+        - ./.git:/var/www/html/.git:cached
+        - ./reports:/var/www/html/reports:delegated
       depends_on:
         - mysql
         - rabbitmq
@@ -34,13 +36,15 @@ services:
       image: mysql:${MYSQL_VERSION}
       platform: linux/x86_64
       container_name: ${COMPOSE_PROJECT_NAME}-mysql
-      restart: always
       command: --innodb-use-native-aio=${INNODB_USE_NATIVE_AIO:-1} --sql_mode=${SQL_MODE:-"ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"}
       environment:
         MYSQL_ROOT_PASSWORD: secret
         MYSQL_DATABASE: symfony
+      ports:
+        - "33061:3306"
       volumes:
         - ./var/mysql-data:/var/lib/mysql:delegated
+        - ./docker/dev/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
       networks:
         - symfony
 
@@ -50,7 +54,6 @@ services:
         context: ./docker/rabbitmq/
         dockerfile: ./Dockerfile
       container_name: ${COMPOSE_PROJECT_NAME}-rabbitmq
-      restart: always
       environment:
         RABBITMQ_ERLANG_COOKIE: 7ead507151fc4461b9f45c1161384a04
         RABBITMQ_DEFAULT_USER: guest
