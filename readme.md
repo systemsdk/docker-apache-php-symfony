@@ -201,6 +201,7 @@ make env-prod
 
 make ssh
 make ssh-root
+make fish
 make ssh-supervisord
 make ssh-mysql
 make ssh-rabbitmq
