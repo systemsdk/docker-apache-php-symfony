@@ -23,6 +23,9 @@
       <PhpSpecSuiteConfiguration>
         <option name="myPath" value="$PROJECT_DIR$/tools/08_rector" />
       </PhpSpecSuiteConfiguration>
+      <PhpSpecSuiteConfiguration>
+        <option name="myPath" value="$PROJECT_DIR$/tools/02_phpstan" />
+      </PhpSpecSuiteConfiguration>
     </suites>
   </component>
 </project>

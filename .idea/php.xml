@@ -225,7 +225,6 @@
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/symfony/dependency-injection" />
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/tools/09_composer/vendor/symfony/polyfill-php84" />
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/symfony/type-info" />
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/ergebnis/json-normalizer" />
@@ -246,11 +245,6 @@
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/justinrainbow/json-schema" />
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/composer-unused/contracts" />
       <path value="$PROJECT_DIR$/tools/09_composer/vendor/composer-unused/symbol-parser" />
-      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/composer" />
-      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/phpstan/phpstan-deprecation-rules" />
-      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/phpstan/phpstan-symfony" />
-      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/phpstan/phpstan" />
-      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/phpstan/phpstan-phpunit" />
       <path value="$PROJECT_DIR$/tools/07_phpmetrics/vendor/composer" />
       <path value="$PROJECT_DIR$/tools/07_phpmetrics/vendor/phpmetrics/phpmetrics" />
       <path value="$PROJECT_DIR$/tools/07_phpmetrics/vendor/nikic/php-parser" />
@@ -381,6 +375,11 @@
       <path value="$PROJECT_DIR$/tools/04_php-coveralls/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/tools/04_php-coveralls/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/tools/04_php-coveralls/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/phpstan/phpstan-deprecation-rules" />
+      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/composer" />
+      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/phpstan/phpstan-symfony" />
+      <path value="$PROJECT_DIR$/tools/02_phpstan/vendor/phpstan/phpstan-phpunit" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

@@ -31,6 +31,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tools/08_rector/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tools/09_composer/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tools/09_composer/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/02_phpstan/spec" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/web-profiler-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
