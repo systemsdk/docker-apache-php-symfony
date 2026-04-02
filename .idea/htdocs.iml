@@ -75,7 +75,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/amqp-messenger" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/serializer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/proxy-manager-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/form" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/doctrine-messenger" />
