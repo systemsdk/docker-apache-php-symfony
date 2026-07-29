@@ -46,6 +46,9 @@ services:
         image: ${COMPOSE_PROJECT_NAME}-rabbitmq
         build:
             context: ./docker/rabbitmq/
+            args:
+                RABBITMQ_VERSION: ${RABBITMQ_VERSION}
+                RABBITMQ_DELAYED_MESSAGE_EXCHANGE_VERSION: ${RABBITMQ_DELAYED_MESSAGE_EXCHANGE_VERSION}
             dockerfile: ./Dockerfile
         container_name: ${COMPOSE_PROJECT_NAME}-rabbitmq
         hostname: rabbitmq
